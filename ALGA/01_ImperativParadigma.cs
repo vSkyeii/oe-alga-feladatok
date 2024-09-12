@@ -85,6 +85,8 @@ namespace OE.ALGA.Paradigmak
         }
     }
 
+
+
     public class FeladatTaroloBejaro<T> : IEnumerator<T>
     {
 
