@@ -9,10 +9,7 @@ namespace OE.ALGA.Paradigmak
     }
     public interface IVegrehajthato
     {
-        public void Vegrehajtas()
-        {
-            
-        }
+        public void Vegrehajtas() {}
     }
     public class FeladatTarolo<T> : IEnumerable<T> where T : IVegrehajthato
     {
@@ -104,9 +101,7 @@ namespace OE.ALGA.Paradigmak
         T IEnumerator<T>.Current => Current;
         object IEnumerator.Current => Current;
 
-        public void Dispose()
-        {
-        }
+        public void Dispose() {}
 
         public bool MoveNext()
         {
