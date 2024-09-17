@@ -42,20 +42,16 @@ namespace OE.ALGA.Paradigmak
             }
         }
 
-        public IEnumerator<T> BejaroLetrehozas()
+        public IEnumerator<T> GetEnumerator()
         {
             return new FeladatTaroloBejaro<T>(tarolo, n);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return BejaroLetrehozas();
+            return GetEnumerator();
         }
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public interface IFuggo : IVegrehajthato
@@ -105,9 +101,8 @@ namespace OE.ALGA.Paradigmak
 
         public bool MoveNext()
         {
-            if (aktualis >= n - 1) return false;
-            aktualis++;
-            return true;
+            ++aktualis;
+            return aktualis < n;
         }
 
         public void Reset()

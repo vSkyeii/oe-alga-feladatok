@@ -216,8 +216,8 @@ namespace OE.ALGA.Tesztek
             Assert.IsTrue(d.Vegrehajtott);
         }
     }
-
-    class BejarasokTeszt //F5.
+    [TestClass()]
+    public class BejarasokTeszt //F5.
     {
         [TestMethod()]
         public void FeladatTaroloBejaroTeszt()
