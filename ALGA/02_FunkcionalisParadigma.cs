@@ -30,7 +30,8 @@ namespace Igen
             }
             public IEnumerator<T> GetEnumerator()
             {
-                return new FeltetelesFeladatTaroloBejaro<T>(tarolo, n, BejaroFeltetel);
+                Func<T, bool> ABejaroFeltetel = BejaroFeltetel ?? (_ => true);
+                return new FeltetelesFeladatTaroloBejaro<T>(tarolo, n, ABejaroFeltetel);
             }
 
 
