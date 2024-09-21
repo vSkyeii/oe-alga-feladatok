@@ -25,13 +25,16 @@ namespace OE.ALGA.Paradigmak
 
         public void Felvesz(T elem)
         {
-            if (n <= tarolo.Length - 1)
+            if (n < tarolo.Length)
             {
                 tarolo[n] = elem;
                 n++;
-                return;
             }
-            throw new TaroloMegteltKivetel();
+            else
+            {
+                throw new TaroloMegteltKivetel();
+            }
+            
         }
 
         public virtual void MindentVegrehajt()
@@ -54,12 +57,12 @@ namespace OE.ALGA.Paradigmak
 
     }
 
-    public interface IFuggo : IVegrehajthato
+    public interface IFuggo 
     {
         public bool FuggosegTeljesul { get; }
     }
 
-    public class FuggoFeladatTarolo<T> : FeladatTarolo<T> where T : IFuggo
+    public class FuggoFeladatTarolo<T> : FeladatTarolo<T> where T : IFuggo, IVegrehajthato
     {
         public FuggoFeladatTarolo(int lnt) : base(lnt)
         {
@@ -84,7 +87,7 @@ namespace OE.ALGA.Paradigmak
 
         T[] tarolo;
         int n;
-        int aktualis;
+        int aktualis = -1;
 
         public FeladatTaroloBejaro(T[] tarolo, int n)
         {

@@ -40,7 +40,7 @@ namespace Igen
         {
             T[] tarolo;
             int n;
-            int aktualis;
+            int aktualis = -1;
             Func<T, bool> feltetel;
 
             public FeltetelesFeladatTaroloBejaro(T[] tarolo, int n, Func<T, bool> feltetel)
