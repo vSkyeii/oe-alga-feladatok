@@ -1,4 +1,4 @@
-using Igen.OE.ALGA.Paradigmak;
+using OE.ALGA.Paradigmak;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OE.ALGA.Paradigmak;
 
