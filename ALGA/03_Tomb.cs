@@ -103,7 +103,7 @@ namespace OE.ALGA.Adatszerkezetek
         }
     }
 
-    public class TombLista<T> : Lista<T>, IEnumerable<T>
+    public class TombLista<T> : IEnumerable<T>, Lista<T>
     {
         T[] E;
         int n = 0;
@@ -192,11 +192,11 @@ namespace OE.ALGA.Adatszerkezetek
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return new TombListaBejaro<T>(E, n);
+            return GetEnumerator();
         }
         public IEnumerator<T> GetEnumerator()
         {
-            return GetEnumerator();
+            return new TombListaBejaro<T>(E, n);
         }
     }
 
@@ -205,7 +205,7 @@ namespace OE.ALGA.Adatszerkezetek
 
         T[] E;
         int n;
-        int idx;
+        int idx = -1;
 
         public TombListaBejaro(T[] e, int n)
         {
@@ -213,7 +213,7 @@ namespace OE.ALGA.Adatszerkezetek
             this.n = n;
         }
 
-        public T Current { get => E[idx]; }
+        public T Current { get { return E[idx]; } }
 
         object IEnumerator.Current => Current;
 
@@ -224,7 +224,7 @@ namespace OE.ALGA.Adatszerkezetek
 
         public bool MoveNext()
         {
-            if (idx <= n)
+            if (idx < n-1)
             {
                 idx++;
                 return true;
