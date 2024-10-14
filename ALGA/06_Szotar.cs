@@ -27,7 +27,7 @@ namespace OE.ALGA.Adatszerkezetek
         {
             E = new SzotarElem<K, T>[meret];
             U = new LancoltLista<SzotarElem<K, T>>();
-            h = (x => hasitoFuggveny(x) % E.Length);
+            h = (x => Math.Abs(hasitoFuggveny(x) % E.Length));
         }
         public HasitoSzotarTulcsordulasiTerulettel(int meret) : this(meret, x => x.GetHashCode())
         {
