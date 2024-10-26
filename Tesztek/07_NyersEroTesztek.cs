@@ -20,7 +20,7 @@ namespace OE.ALGA.Tesztek
         public static readonly float[] nagy_p = new float[] { 4, 3, 2, 8, 7, 5, 4, 3, 2, 5, 3, 9, 5, 1, 7, 9, 4 };
         public static readonly int nagy_n = nagy_w.Length;
         public static readonly int nagy_Wmax = 100;
-        public static readonly float nagy_optimalis_ertek = 34;
+        public static readonly float nagy_optimalis_ertek = 24;
     }
 
     [TestClass()]

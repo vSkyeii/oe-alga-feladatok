@@ -48,7 +48,7 @@ namespace OE.ALGA.Optimalizalas
         }
         public bool Ervenyes(bool[] t)
         {
-            return OsszSuly(t) <= Egesz;
+            return OsszSuly(t) <= Wmax;
         }
     }
     public class NyersEro<T>
@@ -97,7 +97,7 @@ namespace OE.ALGA.Optimalizalas
             bool[]K = new bool[problema.Egesz];
             for (int j = 0; j < problema.Egesz; j++)
             {
-                K[j] = (szam/2^(j-1)) % 2 == 1;
+                K[j] = (szam/(1 << j)) % 2 == 1;
             }
             return K;
         }
@@ -113,7 +113,7 @@ namespace OE.ALGA.Optimalizalas
 
         public bool[] OptimalisMegoldas()
         {
-            NyersEro<bool[]> e = new NyersEro<bool[]>(2^problema.Egesz, Generator, Josag);
+            NyersEro<bool[]> e = new NyersEro<bool[]>(1 << problema.Egesz, Generator, Josag);
             bool[] vissza = e.OptimalisMegoldas();
             LepesSzam = e.LepesSzam;
             return vissza;
