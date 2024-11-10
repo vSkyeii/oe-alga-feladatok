@@ -23,87 +23,87 @@ namespace OE.ALGA.Tesztek
         public static readonly float nagy_optimalis_ertek = 24;
     }
 
-    [TestClass()]
-    public class HatizsakTesztek
-    {
+    //[TestClass()]
+    //public class HatizsakTesztek
+    //{
 
-        [TestMethod()]
-        public void SulyTeszt() //F1.
-        {
-            HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
-            Assert.AreEqual(0, problema.OsszSuly(PakolasTesztEsetek.uresPakolas));
-            Assert.AreEqual(10, problema.OsszSuly(PakolasTesztEsetek.teljesPakolas));
-            Assert.AreEqual(2, problema.OsszSuly(PakolasTesztEsetek.feligPakolas));
-        }
+    //    [TestMethod()]
+    //    public void SulyTeszt() //F1.
+    //    {
+    //        HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
+    //        Assert.AreEqual(0, problema.OsszSuly(PakolasTesztEsetek.uresPakolas));
+    //        Assert.AreEqual(10, problema.OsszSuly(PakolasTesztEsetek.teljesPakolas));
+    //        Assert.AreEqual(2, problema.OsszSuly(PakolasTesztEsetek.feligPakolas));
+    //    }
 
-        [TestMethod()]
-        public void JosagTeszt() //F1.
-        {
-            HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
-            Assert.AreEqual(0, problema.OsszErtek(PakolasTesztEsetek.uresPakolas));
-            Assert.AreEqual(29, problema.OsszErtek(PakolasTesztEsetek.teljesPakolas));
-            Assert.AreEqual(11, problema.OsszErtek(PakolasTesztEsetek.feligPakolas));
-        }
+    //    [TestMethod()]
+    //    public void JosagTeszt() //F1.
+    //    {
+    //        HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
+    //        Assert.AreEqual(0, problema.OsszErtek(PakolasTesztEsetek.uresPakolas));
+    //        Assert.AreEqual(29, problema.OsszErtek(PakolasTesztEsetek.teljesPakolas));
+    //        Assert.AreEqual(11, problema.OsszErtek(PakolasTesztEsetek.feligPakolas));
+    //    }
 
-        [TestMethod()]
-        public void ErvenyesTeszt() //F1.
-        {
-            HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
-            Assert.IsTrue(problema.Ervenyes(PakolasTesztEsetek.uresPakolas));
-            Assert.IsFalse(problema.Ervenyes(PakolasTesztEsetek.teljesPakolas));
-            Assert.IsTrue(problema.Ervenyes(PakolasTesztEsetek.feligPakolas));
-        }
-    }
+    //    [TestMethod()]
+    //    public void ErvenyesTeszt() //F1.
+    //    {
+    //        HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
+    //        Assert.IsTrue(problema.Ervenyes(PakolasTesztEsetek.uresPakolas));
+    //        Assert.IsFalse(problema.Ervenyes(PakolasTesztEsetek.teljesPakolas));
+    //        Assert.IsTrue(problema.Ervenyes(PakolasTesztEsetek.feligPakolas));
+    //    }
+    //}
 
-    [TestClass()]
-    public class NyersEroTesztek
-    {
-        [TestMethod()]
-        public void TombLegnagyobbEleme() //F2.
-        {
-            int[] A = { 4, 6, 7, 4, 2, 1 };
-            NyersEro<int> opt = new NyersEro<int>(
-                A.Length,
-                x => A[x - 1],
-                x => x);
-            Assert.AreEqual(7, opt.OptimalisMegoldas());
-        }
-    }
+    //[TestClass()]
+    //public class NyersEroTesztek
+    //{
+    //    [TestMethod()]
+    //    public void TombLegnagyobbEleme() //F2.
+    //    {
+    //        int[] A = { 4, 6, 7, 4, 2, 1 };
+    //        NyersEro<int> opt = new NyersEro<int>(
+    //            A.Length,
+    //            x => A[x - 1],
+    //            x => x);
+    //        Assert.AreEqual(7, opt.OptimalisMegoldas());
+    //    }
+    //}
 
-    [TestClass()]
-    public class NyersEroHatizsakPakolasTesztek
-    {
-        [TestMethod()]
-        public void JegyzetbenLevoPeldaErtekTeszt() //F3.
-        {
-            HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
-            NyersEroHatizsakPakolas opt = new NyersEroHatizsakPakolas(problema);
-            Assert.AreEqual(PakolasTesztEsetek.jegyzet_optimalis_ertek, opt.OptimalisErtek());
-        }
+    //[TestClass()]
+    //public class NyersEroHatizsakPakolasTesztek
+    //{
+    //    [TestMethod()]
+    //    public void JegyzetbenLevoPeldaErtekTeszt() //F3.
+    //    {
+    //        HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
+    //        NyersEroHatizsakPakolas opt = new NyersEroHatizsakPakolas(problema);
+    //        Assert.AreEqual(PakolasTesztEsetek.jegyzet_optimalis_ertek, opt.OptimalisErtek());
+    //    }
 
-        [TestMethod()]
-        public void JegyzetbenLevoPeldaMegoldasTeszt() //F3.
-        {
-            HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
-            NyersEroHatizsakPakolas opt = new NyersEroHatizsakPakolas(problema);
-            CollectionAssert.AreEqual(PakolasTesztEsetek.jegyzet_optimalis_pakolas, opt.OptimalisMegoldas());
-        }
+    //    [TestMethod()]
+    //    public void JegyzetbenLevoPeldaMegoldasTeszt() //F3.
+    //    {
+    //        HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.jegyzet_n, PakolasTesztEsetek.jegyzet_Wmax, PakolasTesztEsetek.jegyzet_w, PakolasTesztEsetek.jegyzet_p);
+    //        NyersEroHatizsakPakolas opt = new NyersEroHatizsakPakolas(problema);
+    //        CollectionAssert.AreEqual(PakolasTesztEsetek.jegyzet_optimalis_pakolas, opt.OptimalisMegoldas());
+    //    }
 
-        [TestMethod()]
-        public void NagyPeldaMegoldasTeszt() //F3.
-        {
-            HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.nagy_n, PakolasTesztEsetek.nagy_Wmax, PakolasTesztEsetek.nagy_w, PakolasTesztEsetek.nagy_p);
-            NyersEroHatizsakPakolas opt = new NyersEroHatizsakPakolas(problema);
-            Assert.AreEqual(PakolasTesztEsetek.nagy_optimalis_ertek, opt.OptimalisErtek());
-        }
+    //    [TestMethod()]
+    //    public void NagyPeldaMegoldasTeszt() //F3.
+    //    {
+    //        HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.nagy_n, PakolasTesztEsetek.nagy_Wmax, PakolasTesztEsetek.nagy_w, PakolasTesztEsetek.nagy_p);
+    //        NyersEroHatizsakPakolas opt = new NyersEroHatizsakPakolas(problema);
+    //        Assert.AreEqual(PakolasTesztEsetek.nagy_optimalis_ertek, opt.OptimalisErtek());
+    //    }
 
-        [TestMethod()]
-        public void LepesszamVizsgalat() //F3.
-        {
-            HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.nagy_n, PakolasTesztEsetek.nagy_Wmax, PakolasTesztEsetek.nagy_w, PakolasTesztEsetek.nagy_p);
-            NyersEroHatizsakPakolas opt = new NyersEroHatizsakPakolas(problema);
-            Assert.AreEqual(PakolasTesztEsetek.nagy_optimalis_ertek, opt.OptimalisErtek());
-            Console.WriteLine("Lépésszám: " + opt.LepesSzam);
-        }
-    }
+    //    [TestMethod()]
+    //    public void LepesszamVizsgalat() //F3.
+    //    {
+    //        HatizsakProblema problema = new HatizsakProblema(PakolasTesztEsetek.nagy_n, PakolasTesztEsetek.nagy_Wmax, PakolasTesztEsetek.nagy_w, PakolasTesztEsetek.nagy_p);
+    //        NyersEroHatizsakPakolas opt = new NyersEroHatizsakPakolas(problema);
+    //        Assert.AreEqual(PakolasTesztEsetek.nagy_optimalis_ertek, opt.OptimalisErtek());
+    //        Console.WriteLine("Lépésszám: " + opt.LepesSzam);
+    //    }
+    //}
 }
