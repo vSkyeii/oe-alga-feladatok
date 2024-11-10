@@ -25,7 +25,7 @@ namespace OE.ALGA.Optimalizalas
             this.fk = fk;
             this.josag = josag;
         }
-        public int LepesSzam { get; private set; }
+        protected int LepesSzam { get; private set; }
 
         public void BackTrack(int szint, ref T[] E, ref bool van, ref T[] O)
         {
@@ -138,10 +138,12 @@ namespace OE.ALGA.Optimalizalas
             this.fb = fb;
         }
         Func<int, T[], float> fb;
+        public int LepesSzam { get; private set; }
 
         public void BackTrack(int szint, ref T[] E, ref bool van, ref T[] O)
         {
             int i= -1;
+            LepesSzam++;
             while (i < M[szint]-1)
             {
                 i++;
